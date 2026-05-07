@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Portafolio de Álvaro</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+
+      <h1>
+        Portafolio de Álvaro
+      </h1>
+
+      <nav>
+        <ul>
+          <li><a href="#sobreMi">Sobre mí</a></li>
+          <li><a href="#detalles">Detalles sobre mi experiencia y estudios</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#projectos">Projectos publicados</a></li>
+          <li><a href="#formulario">Sugerencias</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+
+      <article id="sobreMi">
+        <h2>
+          Sobre mí
+        </h2>
+        <p>
+          Soy un estudiante de informática y una persona creativa, me gusta crear cosas y aprender nuevas habilidades,
+          aunque normalmente solo aprendo cosas que necesitare usar a corto plazo. Se me da bien sacar las cosas adelante
+          e improvisar en los projectos que hago.
+        </p>
+      </article>
+
+      <article id="detalles" class="detalles">
+        <h2>
+          Detalles sobre mi experiencia y estudios
+        </h2>
+        <section class="grid">
+          <section id="estudios">
+            <h3>
+              Estudios
+            </h3>
+            <ul>
+              <li>Educación secundaria obligatorias - IES Vicente Cano</li>
+              <li>Grado medio de sistemas microinformaticos y redes - IES Juan Bosco</li>
+              <li>Grado superior de desarrollo de aplicaciones multiplataforma (en proceso) - IES Juan Bosco</li>
+            </ul>
+          </section>
+
+          <section id="experiencia">
+            <h3>
+              Experiencia laboral
+            </h3>
+            <ul>
+              <li>Practicas de 400 horas en el ayuntamiento de Tomelloso</li>
+            </ul>
+          </section>
+
+          <section id="lenguajes">
+            <h3>
+              Lenguajes de programación conocidos
+            </h3>
+            <ul>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>GDScript (lenguaje muy similar a python orientado al desarrollo de videojuegos en el motor Godot)</li>
+              <li>LUA (Conocimiento superficial)</li>
+              <li>C++ (Conocimiento superficial)</li>
+            </ul>
+          </section>
+
+          <section id="tecnologias">
+            <h3>
+              Tecnologías que uso y conozco
+            </h3>
+            <ul>
+              <li>Github</li>
+              <li>Git</li>
+              <li>Linux (uso personal, uso educativo y uso profesional)</li>
+              <li>Windows (uso educativo y uso profesional)</li>
+            </ul>
+          </section>
+        </section>
+      </article>
+
+      <article id="hobbies">
+        <h2>
+          Hobbies
+        </h2>
+        <ul>
+          <li>Programar</li>
+          <li>Desarrollar videojuegos</li>
+          <li>Jugar videojuegos</li>
+          <li>Dibujar</li>
+          <li>Escribir</li>
+          <li>Leer</li>
+        </ul>
+      </article>
+
+      <article id="projectos" class="projectos">
+        <h2>
+          Projectos publicados
+        </h2>
+        <aside>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xiHPQIzFisU?si=xtrj1xktDcNylcgT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </aside>
+        <section>
+          <h3>
+            Un juego
+          </h3>
+          <p>
+            Iba a poner el juego que hice, pero al ser un repositorio público me da verguenza así que
+            simplemente voy a poner aquí un trailer del Mario Oddisey
+          </p>
+        </section>
+      </article>
+      
+      <article class="contacto-form">
+          <form id="formulario" action="#">
+              <fieldset>
+                  <legend>Sugerencias</legend>
+                  <div class="datos">
+                      <div class="input-group">
+                          <label><span class="required">*</span>Nombre</label>
+                          <input type="text" placeholder="Tu nombre">
+                      </div>
+                      <div class="input-group">
+                          <label><span class="required">*</span>Apellidos</label>
+                          <input type="text" placeholder="Tus apellidos">
+                      </div>
+                      <div class="input-group">
+                          <label><span class="required">*</span>Email</label>
+                          <input type="email" placeholder="ejemplo@correo.com" required>
+                      </div>
+                      <div class="input-group">
+                          <label class="mensaje"><span class="required">*</span>Sugerencia</label>
+                          <textarea id="textarea" rows="15" cols="60" placeholder="Escriba aquí tus sugerencias"
+                              maxlength="2000" form="formulario" required></textarea>
+                          <div class="caracteres">
+                              <p id="CActuales">
+                                  2000 caracteres máximo.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <p class="aclaracion"><span class="required">*</span> Indica que el campo es obligatorio</p>
+              </fieldset>
+              <div class="botones">
+                  <button type="reset" class="btn-clean">Limpiar</button>
+                  <button type="submit" class="btn-primary">Enviar Mensaje</button>
+              </div>
+          </form>
+      </article>
+
+    </main>
+
+    <footer>
+      <p>
+        ©Copyrigth 2026.
+      </p>
+      <article>
+        <button><a href="https:\\bsky.app"><img src="imagenes/blsuk.png" alt="Bluesky logo"></a></button>
+        <button><a href="https:\\facebook.com"><img src="imagenes/facebook.ico" alt="facebook logo"></a></button>
+        <button><a href="https:\\x.com"><img src="imagenes/twitter.png" alt="X logo"></a></button>
+      </article>
+    </footer>
+    
+  </body>
+
+</html>

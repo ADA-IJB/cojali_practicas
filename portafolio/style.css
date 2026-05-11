@@ -230,3 +230,10 @@ footer img {
     border-bottom: 1px solid gray;
     color: green;
 }
+
+.tema {
+    position: fixed;
+    width: 5rem;
+    top: 2rem;
+    right: 2rem;
+}

@@ -128,7 +128,7 @@ button:hover {
     color: white;
 }
 
-.datos {
+.datos, .datosEstudios {
     margin-left: 20%;
     margin-right: 20%;
     display: flex;
@@ -155,7 +155,7 @@ button:hover {
     align-items: center;
 }
 
-.input-group:last-child {
+.datos .input-group:last-child {
     display: grid;
     grid-template-columns: 0fr 1fr;
     grid-template-rows: 1fr 1fr;

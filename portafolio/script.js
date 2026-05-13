@@ -7,8 +7,8 @@ const storage = window.localStorage;
 let theme = "light";
 let estudios = [
     {"anio": 2020, "nombre": "Educación secundaria obligatorias", "institucion": "IES Vicente Cano"},
-    {"anio": 2020, "nombre": "Grado medio de sistemas microinformaticos y redes", "institucion": "IES Juan Bosco"},
-    {"anio": 2020, "nombre": "Grado superior de desarrollo de aplicaciones multiplataforma (en proceso)", "institucion": "IES Juan Bosco"}
+    {"anio": 2023, "nombre": "Grado medio de sistemas microinformaticos y redes", "institucion": "IES Juan Bosco"},
+    {"anio": 2025, "nombre": "Grado superior de desarrollo de aplicaciones multiplataforma (en proceso)", "institucion": "IES Juan Bosco"}
 ]
 
 botonTema.onclick = function () {

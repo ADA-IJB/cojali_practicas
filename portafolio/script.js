@@ -67,11 +67,9 @@ function onLoadFunction() {
 }
 
 function chargeEstudios() {
-    /*
     if (storage.getItem("estudios") != null) {
-        estudios = storage.getItem("estudios");
+        estudios = JSON.parse(storage.getItem("estudios"));
     }
-    */
     for(let i in estudios) {
         estudioLista.appendChild(createEstudio(estudios[i]["anio"], estudios[i]["nombre"], estudios[i]["institucion"]));
     }
@@ -112,5 +110,5 @@ botonEstudios.onclick = function () {
             formData.get("institucion")
         )
     )
-    //storage.setItem("estudios", estudios);
+    storage.setItem("estudios", JSON.stringify(estudios));
 };

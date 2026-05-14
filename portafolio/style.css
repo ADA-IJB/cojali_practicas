@@ -237,3 +237,69 @@ footer img {
     top: 2rem;
     right: 2rem;
 }
+
+.card {
+    display: "none";
+}
+
+.card:first-child {
+    display: flex;
+    flex-direction: row;
+}
+
+.error {
+    display: "none";
+}
+
+#repoParent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+#avatar {
+    max-width: 10rem;
+    max-height: 10rem;
+    border-radius: 100%;
+    border: 1px solid gray;
+}
+
+.repositorio {
+    border: 1px solid gray;
+    border-radius: 5px;
+    min-height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    grid-template-areas: 
+    "titulo estado"
+    "descripcion ."
+    "lenguaje ."
+    ;
+    background-color: rgb(37, 36, 36);
+    padding: 1rem;
+}
+
+.repoNombre {
+    grid-area: titulo;
+}
+
+.repoDesc {
+    grid-area: descripcion;
+    color: gray;
+    margin-top: 0.5rem;
+}
+
+.repoLenguaje {
+    grid-area: lenguaje;
+    color: gray;
+    margin-top: 1.5rem;
+}
+
+.repoEstado {
+    border: 1px solid gray;
+    text-align: center;
+    max-height: 2rem;
+    border-radius: 50px;
+    grid-area: estado;
+    color: gray;
+}

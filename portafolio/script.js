@@ -36,6 +36,10 @@ function changeTheme() {
         header.style.borderBottom = "2px solid black";
         footer.style.backgroundColor = "brown";
         footer.style.borderTop = "2px solid black";
+        let repos = document.getElementsByClassName('repositorio');
+        for (i = 0; i < repos.length; i++) {
+            document.getElementsByClassName('repositorio')[i].style.backgroundColor = "#f3ded6";
+        }
         botonTema.textContent = "Claro";
     } else {
         document.body.style.backgroundColor = "#221d1b";
@@ -49,6 +53,10 @@ function changeTheme() {
         header.style.borderBottom = "2px solid white";
         footer.style.backgroundColor = "rgb(66, 15, 15)";
         footer.style.borderTop = "2px solid white";
+        let repos = document.getElementsByClassName('repositorio');
+        for (i = 0; i < repos.length; i++) {
+            document.getElementsByClassName('repositorio')[i].style.backgroundColor = "rgb(37, 36, 36)";
+        }
         botonTema.textContent = "Oscuro";
     }
 };
@@ -64,6 +72,7 @@ function chargeTheme() {
 function onLoadFunction() {
     chargeTheme();
     chargeEstudios();
+    mostrarGithub();
 }
 
 function chargeEstudios() {
@@ -112,3 +121,83 @@ botonEstudios.onclick = function () {
     )
     storage.setItem("estudios", JSON.stringify(estudios));
 };
+
+async function mostrarGithub() {
+    const card = document.getElementById("card");
+    const error = document.getElementById("error");
+    const cuenta = "ADA-IJB"
+
+    try {
+    const response = await fetch(`https://api.github.com/users/${cuenta}`);
+    const repositorios = await fetch(`https://api.github.com/users/${cuenta}/repos`);
+
+    if (!response.ok) {
+        throw new Error("Usuario no encontrado");
+    }
+
+    const data = await response.json();
+    const dataRepo = await repositorios.json();
+
+    document.getElementById("avatar").src = data.avatar_url;
+    document.getElementById("name").textContent = data.name || data.login;
+    document.getElementById("bio").textContent = data.bio || "Sin bio disponible";
+    document.getElementById("repos").textContent = data.public_repos;
+
+    await makeRepos(dataRepo);
+
+    if (theme == "light") {
+        let repos = document.getElementsByClassName('repositorio');
+        for (i = 0; i < repos.length; i++) {
+            document.getElementsByClassName('repositorio')[i].style.backgroundColor = "#f3ded6";
+        }
+    }
+
+    card.style.display = "flex";
+
+    } catch (err) {
+    error.textContent = "Error desplegando cuenta: " + err.message;
+    error.style.display = "block";
+    }
+}
+
+function makeRepos(data) {
+    const padre = document.getElementById('repoParent');
+    for (let i = 0; i < data.length; i++) {
+        const tarjeta = document.createElement('section');
+        const titulo = document.createElement('h4');
+        const link = document.createElement('a');
+        const descripcion = document.createElement('p');
+        const lenguaje = document.createElement('p');
+        const estado = document.createElement('p');
+
+        tarjeta.className = "repositorio";
+
+        link.textContent = data[i].name;
+        link.setAttribute("href", data[i].html_url)
+        link.className = "repoNombre";
+
+        descripcion.textContent = data[i].description || "";
+        descripcion.className = "repoDesc";
+
+        if (descripcion.textContent == "") {
+            descripcion.style.marginTop = 0;
+        }
+
+        lenguaje.textContent = data[i].language || "";
+        lenguaje.className = "repoLenguaje";
+
+        if (lenguaje.textContent == "") {
+            lenguaje.style.marginTop = 0;
+        }
+
+        estado.textContent = data[i].private ? "private":"public";
+        estado.className = "repoEstado";
+
+        padre.appendChild(tarjeta);
+        tarjeta.appendChild(titulo);
+        titulo.appendChild(link);
+        tarjeta.appendChild(descripcion);
+        tarjeta.appendChild(lenguaje);
+        tarjeta.appendChild(estado);
+    }
+}
